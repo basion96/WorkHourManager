@@ -4,3 +4,8 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+.formBox{
+    background-color: #ffffff;
+    opacity: 0.5;
+}

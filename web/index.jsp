@@ -35,6 +35,18 @@
             <label class="mr-sm-2" for="finishTime">finish time:</label>
             <input type="text" id="finishTime" name="finishTime" class="form-control" required="true" maxlength="4">
           </div>
+          <div class="form-group">
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="oneLunch">1 Lunch
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="oneLunch">2 Lunch
+              </label>
+            </div>
+          </div>
 
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
