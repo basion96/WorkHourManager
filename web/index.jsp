@@ -17,8 +17,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <title>Home</title>
   </head>
-  <body>
-    <jumbotron>
+  <body
+  <jsp:include page="/navbar"/>
+  <jumbotron>
       <h1>Work Hour Manager</h1>
 
       <div class="container">
@@ -38,17 +39,17 @@
           <div class="form-group">
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="oneLunch">30min Lunch
+                <input type="radio" class="form-check-input" name="lunch">30min Lunch
               </label>
             </div>
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="oneLunch">1hr Lunch
+                <input type="radio" class="form-check-input" name="lunch">1hr Lunch
               </label>
             </div>
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="oneLunch">2hr Lunch
+                <input type="radio" class="form-check-input" name="lunch">2hr Lunch
               </label>
             </div>
           </div>
