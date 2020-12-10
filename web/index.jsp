@@ -39,17 +39,17 @@
           <div class="form-group">
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="lunch">30min Lunch
+                <input type="radio" class="form-check-input" name="lunch" value="30">30min Lunch
               </label>
             </div>
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="lunch">1hr Lunch
+                <input type="radio" class="form-check-input" name="lunch" value="1">1hr Lunch
               </label>
             </div>
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="lunch">2hr Lunch
+                <input type="radio" class="form-check-input" name="lunch" value="2">2hr Lunch
               </label>
             </div>
           </div>
