@@ -24,29 +24,42 @@
 
       <div class="container">
         <form action="${pageContext.request.contextPath}/submitHours" method="post">
-          <div class="form-group">
-            <label class="mr-sm-2" for="date">Date:</label>
-            <input type="text" id="date" name="date" class="form-control" required="true" maxlength="8">
+
+          <div class="form-group row">
+            <label for="date" class="col-2 col-form-label">Date</label>
+            <div class="col-10">
+              <input class="form-control" type="date" value="2011-08-19" id="date" name="date">
+            </div>
           </div>
-          <div class="form-group">
-            <label class="mr-sm-2" for="startTime">Start time:</label>
-            <input type="text" id="startTime" name="startTime" class="form-control" required="true" maxlength="4">
+
+          <div class="form-group row">
+            <label for="startTime" class="col-2 col-form-label">Start Time</label>
+            <div class="col-10">
+              <input class="form-control" type="time" value="13:45:00" id="startTime" name="startTime">
+            </div>
           </div>
-          <div class="form-group">
-            <label class="mr-sm-2" for="finishTime">finish time:</label>
-            <input type="text" id="finishTime" name="finishTime" class="form-control" required="true" maxlength="4">
+
+          <div class="form-group row">
+            <label for="finishTime" class="col-2 col-form-label">Finish Time</label>
+            <div class="col-10">
+              <input class="form-control" type="time" value="13:45:00" id="finishTime" name="finishTime">
+            </div>
           </div>
+
           <div class="form-group">
+
             <div class="form-check-inline">
               <label class="form-check-label">
                 <input type="radio" class="form-check-input" name="lunch" value="30">30min Lunch
               </label>
             </div>
-            <div class="form-check-inline">
+
+            <div class="form-group-inline">
               <label class="form-check-label">
                 <input type="radio" class="form-check-input" name="lunch" value="1">1hr Lunch
               </label>
             </div>
+
             <div class="form-check-inline">
               <label class="form-check-label">
                 <input type="radio" class="form-check-input" name="lunch" value="2">2hr Lunch
@@ -58,6 +71,28 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-primary">Clear</button>
           </div>
+          <script>
+            var d = new Date();
+
+            var month = d.getDay();
+            if(month < 10)
+              month = "0"+month;
+            var day = d.getDay();
+            if(day < 10)
+              day = "0"+day;
+
+            var hours = d.getHours();
+            if(hours < 10)
+              hours = "0"+hours;
+            var minutes = d.getMinutes();
+            if(minutes < 10)
+              minutes = "0"+minutes;
+
+            document.getElementById("date").value = d.getFullYear()+"-"+month+"-"+day;
+            document.getElementById("startTime").value = hours+":"+minutes;
+            document.getElementById("finishTime").value = hours+":"+minutes;
+            console.log("value: "+ d.getFullYear()+"-"+month+"-"+day)
+          </script>
         </form>
       </div>
 

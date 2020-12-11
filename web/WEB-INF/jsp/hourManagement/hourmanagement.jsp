@@ -52,6 +52,9 @@
                 <tr>
                     <td>Saturday</td><td></td>
                 </tr>
+                <tr>
+                    <td>Week Total</td><td></td>
+                </tr>
 
             </table>
         </div>
