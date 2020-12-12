@@ -13,9 +13,6 @@ import java.io.IOException;
 @WebServlet("/submitHours")
 public class SubmitHours extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String date = request.getParameter("date");
-        String startTime = request.getParameter("startTime");
-        String finishTime = request.getParameter("finishTime");
         double lunch;
         switch(request.getParameter("lunch")){
             case "30": lunch = 0.5;
@@ -29,7 +26,9 @@ public class SubmitHours extends HttpServlet {
         }
 
         new DatabaseAccess().submitHours(request.getParameter("date"), request.getParameter("startTime"), request.getParameter("finishTime"), lunch);
+
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/hourManagement/hourmanagement.jsp");
         rd.forward(request,response);
+
     }
 }

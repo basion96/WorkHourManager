@@ -1,11 +1,15 @@
 package database;
 
+import HourManager.DaysHours;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class DatabaseAccess {
 
@@ -20,6 +24,19 @@ public class DatabaseAccess {
         }
 
         return connection;
+    }
+
+    public List<DaysHours> getHours(){
+        try(Connection conn = getConnection()){
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM workedHours");
+            ResultSet rs = statement.executeQuery();
+            statement.close();
+            while(rs.next()){
+
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public void submitHours(String date, String startTime, String finishTime, double lunch){
