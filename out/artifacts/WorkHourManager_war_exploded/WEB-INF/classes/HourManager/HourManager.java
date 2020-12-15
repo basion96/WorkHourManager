@@ -1,5 +1,6 @@
 package HourManager;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +11,15 @@ import java.io.IOException;
 @WebServlet("/submithours")
 public class HourManager extends HttpServlet {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // get data here
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/hourManagement/hourManagement.jsp");
+        rd.forward(request,response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String date = request.getParameter("date");
-        String startTime = request.getParameter("startTime");
-        String finishTime = request.getParameter("finishTime");
-
-
+        doGet(request, response);
     }
 
 }

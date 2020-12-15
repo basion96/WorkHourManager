@@ -1,5 +1,9 @@
 package HourManager;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class DaysHours {
 
     private String date, startTime, finishTime;
@@ -42,5 +46,33 @@ public class DaysHours {
 
     public void setBreakTime(int breakTime) {
         this.breakTime = breakTime;
+    }
+
+    public String getDay(){
+        int year = Integer.parseInt(date.substring(date.lastIndexOf("/"))),
+                month = Integer.parseInt(date.substring(date.indexOf("/"))),
+                day = Integer.parseInt(date.substring(0, date.lastIndexOf("/")));
+
+        Calendar date = Calendar.getInstance();
+        date.set(year, month, day);
+
+        String daySTR = "";
+        switch (date.get(Calendar.DAY_OF_WEEK)){
+            case 1: daySTR = "Sunday";
+                break;
+            case 2: daySTR = "Monday";
+                break;
+            case 3: daySTR = "Tuesday";
+                break;
+            case 4: daySTR = "Wednesday";
+                break;
+            case 5: daySTR = "Thursday";
+                break;
+            case 6: daySTR = "Friday";
+                break;
+            case 7: daySTR = "Saturday";
+                break;
+        }
+        return daySTR;
     }
 }

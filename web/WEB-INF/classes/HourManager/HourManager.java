@@ -13,7 +13,8 @@ public class HourManager extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // get data here
-
+        DaysHours d = new DaysHours("2020-12-23", "12::00", "17:00:00", 1);
+        request.setAttribute("hours", d);
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/hourManagement/hourManagement.jsp");
         rd.forward(request,response);
     }
