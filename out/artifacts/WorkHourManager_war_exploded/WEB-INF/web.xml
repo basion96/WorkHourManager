@@ -3,4 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!-- navbar for each page -->
+    <servlet>
+        <servlet-name>navbar</servlet-name>
+        <jsp-file>/WEB-INF/jsp/includes/navbar.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>navbar</servlet-name>
+        <url-pattern>/navbar</url-pattern>
+    </servlet-mapping>
+
+    <!--  -->
+    <servlet>
+        <servlet-name>hourManagement</servlet-name>
+        <jsp-file>/WEB-INF/jsp/hourManagement/hourmanagement.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hourManagement</servlet-name>
+        <url-pattern>/hourManagement</url-pattern>
+    </servlet-mapping>
+
 </web-app>

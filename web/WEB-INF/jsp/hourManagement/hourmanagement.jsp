@@ -15,7 +15,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+        <script>
+            function getDayFromDate(date) {
+                var day =  new Date();
+                day.setDate(date);
+                return day.getDay();
+            }
+        </script>
         <title>Hour Management</title>
     </head>
     <body>
@@ -26,35 +32,35 @@
 
         <div class="container">
             <!-- put table here -->
-            <table>
-                <tr>
-                    <th></th>
-                    <th>date here</th>
-                </tr>
-                <tr>
-                    <td>Sunday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Monday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Tuesday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Thursday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Friday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Saturday</td><td></td>
-                </tr>
-                <tr>
-                    <td>Week Total</td><td></td>
-                </tr>
+            <table class="table table-hover table-light">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Week</th>
+                        <th scope="col">Sunday 12/02/20</th>
+                        <th scope="col">Monday 13/02/20</th>
+                        <th scope="col">Tuesday 14/02/20</th>
+                        <th scope="col">Wednesday 15/02/20</th>
+                        <th scope="col">Thursday</th>
+                        <th scope="col">Friday</th>
+                        <th scope="col">Saturday</th>
+                        <th scope="col">Week Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>payweek</td>
+                        <td>Week 40</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>69</td>
+                    </tr>
+                </tbody>
 
             </table>
         </div>
