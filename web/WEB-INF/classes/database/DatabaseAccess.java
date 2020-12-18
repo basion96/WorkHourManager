@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class DatabaseAccess {
 
@@ -26,17 +26,20 @@ public class DatabaseAccess {
         return connection;
     }
 
-    public List<DaysHours> getHours(){
+    public ArrayList<DaysHours> getHours(){
+        ArrayList<DaysHours> hours = new ArrayList<>();
         try(Connection conn = getConnection()){
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM workedHours");
             ResultSet rs = statement.executeQuery();
             statement.close();
             while(rs.next()){
-
+                hours.add(new DaysHours(rs.getString(2), rs.getString(3), rs.getString(4), rs.getDouble(5)));
             }
         }catch(SQLException e){
             e.printStackTrace();
         }
+
+        return null;
     }
 
     public void submitHours(String date, String startTime, String finishTime, double lunch){

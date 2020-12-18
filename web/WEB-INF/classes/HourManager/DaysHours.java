@@ -7,9 +7,9 @@ import java.util.Date;
 public class DaysHours {
 
     private String date, startTime, finishTime;
-    private int breakTime;
+    private double breakTime;
 
-    public DaysHours(String date, String startTime, String finishTime, int breakTime){
+    public DaysHours(String date, String startTime, String finishTime, double breakTime){
         this.date = date;
         this.startTime = startTime;
         this.finishTime = finishTime;
@@ -40,7 +40,7 @@ public class DaysHours {
         this.finishTime = finishTime;
     }
 
-    public int getBreakTime() {
+    public double getBreakTime() {
         return breakTime;
     }
 
